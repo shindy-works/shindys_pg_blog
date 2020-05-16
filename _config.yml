@@ -18,18 +18,31 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+lang: ja
 title: SHINDY'S PG BLOG
 email: shindy.developer@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This Page Exist For Me!
-  So, Get Out Here XD
-baseurl: "/shindys_pg_blog/index" # the subpath of your site, e.g. /blog
+    情報系出身。プログラミングについて学んだことから便利ツールの紹介まで自由に投稿していきます。
+baseurl: "/shindys_pg_blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ""
 github_username: shindy-works
+
+# youtube: shindy dev
+# youtube_channel: UC6GDtQ7oLtTTUEHhSGv7yVw
+# youtube_channel_name: shindy dev
+#twitter_username: ""
+
+# page settings
+header_pages:
+ - about.markdown
+ - blog/blog.markdown
 
 # Build settings
 theme: minima
+
+minima:
+  skin: dark
+
 plugins:
   - jekyll-feed
 
