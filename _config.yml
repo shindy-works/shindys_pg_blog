@@ -35,7 +35,7 @@ github_username: shindy-works
 # page settings
 header_pages:
  - about.markdown
- - blog/blog.markdown
+ - blog/index.markdown
 
 # Build settings
 theme: minima
