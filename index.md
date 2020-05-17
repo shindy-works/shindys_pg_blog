@@ -4,14 +4,36 @@
 title: Home
 layout: page #home
 ---
+<!-- 更新履歴ボックス -->
+<style type="text/css">
+    .kousin {
+        overflow:auto;
+        height:256px;
+        padding:8px;
+    }
+</style>
+
+
 
 # はじめに
 ***
 > Hello World!
 
-このブログではプログラミングについて学んだことから便利ツールの紹介まで自由に投稿していきます。
-
+当サイトではプログラミングをしていて「ふ～ん」と思ったことから普段使いそうなツールの紹介まで、自由に投稿していきます！  
+※メモ代わりでもあるため、記事によって質にムラがあります。ご了承ください。  
 [ブログ]({{site.baseurl}}/blog/)へ
+
+# 更新履歴
+***
+<div class="kousin">
+    {% for post in site.posts reversed limit:10 %}
+    {% assign months = "January|February|March|April|May|June|July|August|September|October|November|December" | split: "|" %} {% assign m = post.date | date: "%-m" | minus: 1 %} {% assign day = post.date | date: "%d" %} {% assign month = months[m] %} {% assign year = post.date | date: "%Y" %}
+    {{ month }} {{ day }}, {{ year }}  
+    <a href="{{site.baseurl}}{{ post.url }}">
+      {{ post.title }}
+    </a> <br>
+    {% endfor %}
+</div>
 
 # 今まで勉強してきた言語
 ***

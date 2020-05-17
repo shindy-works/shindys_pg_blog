@@ -19,23 +19,25 @@
 # in the templates via {{ site.myvariable }}.
 
 lang: ja
+locale : "ja-JP"
+author: Shindy
 title: SHINDY'S PG BLOG
 email: shindy.developer@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-    情報系出身。プログラミングについて学んだことから便利ツールの紹介まで自由に投稿していきます。
+    情報系大卒。プログラミングについて学んだことから便利ツールの紹介まで自由に投稿していきます。
 baseurl: "/shindys_pg_blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: shindy-works
 
-# youtube: shindy dev
-# youtube_channel: UC6GDtQ7oLtTTUEHhSGv7yVw
-# youtube_channel_name: shindy dev
+youtube: shindy dev
+youtube_channel: UC6GDtQ7oLtTTUEHhSGv7yVw
+youtube_channel_name: shindy dev
 #twitter_username: ""
 
 # page settings
 header_pages:
- - about.markdown
- - blog/index.markdown
+ - about.md
+ - blog/index.md
 
 # Build settings
 theme: minima
@@ -54,14 +56,15 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - _template/
