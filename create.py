@@ -48,12 +48,22 @@ month_dict = {
     12: "December"
 }
 
+# URLで使えない文字
+cant_use_char = [
+    '\\', "'", '|', '`', '^', '"', '<', '>', ')', '(', '}', '{', ']', '[', ';',
+    '/', '?', ':', '@', '&', '=', '+', '$', ',', '%', '#'
+]
 
-# template文字列を取得
-def get_tmp(layout):
-    with open(os.path.join(PJTPATH, '_template', layout, '__temp__'),
-              'r') as f:
-        return f.read()
+
+# 引数処理
+def get_args(args):
+    if args.layout == 'post':
+        if not os.path.split(args.path)[-1] in args.categories:
+            args.categories.append(os.path.split(args.path)[-1])
+
+        return args.layout, args.title, args.path, args.categories
+
+    return args.layout, args.title, args.path
 
 
 # jekyllに準拠したフォーマットの日付を取得(yyyy-mm-dd HH-MM-SS +/-hhmm)
@@ -65,14 +75,17 @@ def get_date():
     return f"{now_date.astimezone(tz):%Y-%m-%d %H:%M:%S %z}"
 
 
-def get_args(args):
-    if args.layout == 'post':
-        if not os.path.split(args.path)[-1] in args.categories:
-            args.categories.append(os.path.split(args.path)[-1])
+# template文字列を取得
+def get_tmp(layout):
+    with open(os.path.join(PJTPATH, '_template', layout, '__temp__'),
+              'r') as f:
+        return f.read()
 
-        return args.layout, args.title, args.path, args.categories
 
-    return args.layout, args.title, args.path
+def norm_str(s):
+    for c in cant_use_char:
+        s = s.replace(c, c.encode().hex())
+    return s
 
 
 # テンプレート作成
@@ -85,16 +98,19 @@ def create_post(*args):
     layout, title, path, cate = args[:4]
     tmp = get_tmp(layout)
 
+    norm_path = '/'.join([norm_str(p) for p in path.split('/')])
+
     hex_title = title.encode().hex()
 
     date = datetime.date.today()
 
     # 出力パス
-    out_path = os.path.join(PJTPATH, "_posts", f"{date}-{hex_title}.md")
+    out_path = os.path.join(PJTPATH, "_posts", norm_path,
+                            f"{date}-{hex_title}.md")
 
     # 出力データ
     out_str = tmp.format(title, get_date(), str(cate),
-                         f"{path}/{date:%Y/%m/%d}/{hex_title}")
+                         f"{norm_path}/{date:%Y/%m/%d}/{hex_title}")
 
     with open(out_path, 'wb') as f:
         f.write(out_str.encode('utf-8'))
@@ -107,9 +123,12 @@ def create_page(*args):
     layout, title, path = args[:3]
     tmp = get_tmp(layout)
 
-    fname = f"index.md"
-    out_path = os.path.join(PJTPATH, path, fname)
-    out_str = tmp.format(title, get_date(), os.path.split(path)[-1], path)
+    norm_path = '/'.join([norm_str(p) for p in path.split('/')])
+
+    out_path = os.path.join(PJTPATH, norm_path, "index.md")
+    os.mkdir(os.path.dirname(out_path))
+
+    out_str = tmp.format(title, get_date(), os.path.split(path)[-1], norm_path)
 
     with open(out_path, 'wb') as f:
         f.write(out_str.encode('utf-8'))

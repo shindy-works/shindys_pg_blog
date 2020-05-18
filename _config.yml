@@ -66,3 +66,4 @@ exclude:
   # - vendor/gems/
   # - vendor/ruby/
   - _template/
+  - create.py

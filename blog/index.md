@@ -9,7 +9,7 @@ title: Blog
 - [*C言語*(準備中)]({{ not_yet }})
 - [*C++*(準備中)]({{ not_yet }})
 <!-- (language/c++) -->
-- [*C#*(準備中)]({{ not_yet }})
+- [*C#*](language/c23)
 - [*VB.Net*(準備中)]({{ not_yet }})
 - [*Java*(準備中)]({{ not_yet }})
 - [*Kotlin*(準備中)]({{ not_yet }})
