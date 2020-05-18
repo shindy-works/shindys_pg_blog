@@ -107,7 +107,7 @@ def create_post(*args):
     # 出力パス
     out_path = os.path.join(PJTPATH, "_posts", norm_path,
                             f"{date}-{hex_title}.md")
-
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
     # 出力データ
     out_str = tmp.format(title, get_date(), str(cate),
                          f"{norm_path}/{date:%Y/%m/%d}/{hex_title}")
@@ -126,7 +126,7 @@ def create_page(*args):
     norm_path = '/'.join([norm_str(p) for p in path.split('/')])
 
     out_path = os.path.join(PJTPATH, norm_path, "index.md")
-    os.mkdir(os.path.dirname(out_path))
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
     out_str = tmp.format(title, get_date(), os.path.split(path)[-1], norm_path)
 
