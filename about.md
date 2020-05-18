@@ -8,7 +8,7 @@ permalink: /about/
 ***
 
 *Author*:  **{{site.author}}**  
-*Mail*:  **{{site.email}}**  
+*Mail*:  [**{{site.email}}**](mailto:{{site.email}})  
 
 *Description*:  
 **{{ site.description }}**
