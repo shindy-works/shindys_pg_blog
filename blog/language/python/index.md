@@ -10,7 +10,7 @@ permalink: blog/language/python
 {% for category in site.categories %}
   {% if category[0] == page.categories %} 
     {% for post in category[1] %}
-  <li><span class="post-meta">{{ page.date | date: "%-d %B %Y" }}</span>
+  <li><span class="post-meta">{{ post.date | date: "%B %-d %Y" }}</span>
     <h3>
       <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}

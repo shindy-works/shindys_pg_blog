@@ -26,9 +26,13 @@ layout: page #home
 # 更新履歴
 ***
 <div class="kousin">
-    {% for post in site.posts reversed limit:10 %}
-    {% assign months = "January|February|March|April|May|June|July|August|September|October|November|December" | split: "|" %} {% assign m = post.date | date: "%-m" | minus: 1 %} {% assign day = post.date | date: "%d" %} {% assign month = months[m] %} {% assign year = post.date | date: "%Y" %}
-    {{ month }} {{ day }}, {{ year }}  
+    {% for post in site.posts limit:10 %}
+    {% if post.upload_date != post.date %}
+    <font color="#00C000">[UPDATE]</font>
+    {% else %}
+    <font color="#ff4500">[UPLOAD]</font>
+    {% endif %}
+    {{ post.date | date: "%B %-d %Y" }} :   
     <a href="{{site.baseurl}}{{ post.url }}">
       {{ post.title }}
     </a> <br>

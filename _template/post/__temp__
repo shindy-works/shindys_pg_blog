@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "{}"
-date: {}
-categories: {}
-permalink: {}
+title: "{0}"
+upload_date: {1}
+date: {1}
+categories: {2}
+permalink: {3}
 ---
