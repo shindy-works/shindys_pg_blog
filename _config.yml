@@ -67,3 +67,4 @@ exclude:
   # - vendor/ruby/
   - _template/
   - create.py
+  - venv/
