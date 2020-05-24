@@ -9,8 +9,6 @@ sys.dont_write_bytecode = True
 # 実行ディレクトリ名
 PJTPATH = os.path.dirname(os.path.abspath(__file__))
 
-# TODO: フォルダ生成時に日本語が含まれていないか確認したい
-
 # URLで使えない文字
 cant_use_chars = [
     '\\', "'", '|', '`', '^', '"', '<', '>', ')', '(', '}', '{', ']', '[', ';',
@@ -57,10 +55,8 @@ class TemplateCreator:
                                        'post': self._init_post_tmp}[layout]()
 
         
-        print(self.out_path)
         # 指定パスがなければフォルダを作成
         out_dir = os.path.dirname(self.out_path)
-        print(out_dir)
         if not os.path.exists(out_dir): os.makedirs(out_dir)
 
     # テンプレート出力
