@@ -29,12 +29,14 @@ layout: page #home
 ***
 <div class="kousin">
     {% for post in site.posts limit:10 %}
-    {% if post.upload_date != post.date %}
+        {% assign today = post.date | date: "%B %-d %Y" %}
+        {% assign upload_date = post.upload_date | date: "%B %-d %Y" %}
+        {% if today != upload_date %}
     <font color="#00C000">[UPDATE]</font>
-    {% else %}
+        {% else %}
     <font color="#ff4500">[UPLOAD]</font>
-    {% endif %}
-    {{ post.date | date: "%B %-d %Y" }} :   
+        {% endif %}
+    {{ today }} :   
     <a href="{{site.baseurl}}{{ post.url }}">
       {{ post.title }}
     </a> <br>

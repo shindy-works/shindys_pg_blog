@@ -82,6 +82,21 @@ class TemplateCreator:
         tz = datetime.timezone(now_date - utc_date)
         return f"{now_date.astimezone(tz):%Y-%m-%d %H:%M:%S %z}"
 
+    def _get_filename(self):
+        fn = self.norm_path.split('/')[-1]
+        date = datetime.date.today()
+        
+        out_dir = os.path.join(PJTPATH, "_posts", self.norm_path)
+        
+        if not os.path.exists(out_dir): return fn
+
+        lisd_dir = [f for f in os.listdir(out_dir) if os.path.isfile(os.path.join(out_dir, f))]
+
+        for i in range(2*10):
+            fn_num = f"{fn}_{i + 1}"
+            if not f"{date}-{fn_num}.md" in lisd_dir:
+                return fn_num
+
     # 文字列の正規化(使用できない文字は16進数文字に置き換える)
     def _get_norm_str(self, s):
         if s.isascii() and len([c for c in cant_use_chars if c in s]) == 0: return s
@@ -114,13 +129,12 @@ class TemplateCreator:
 
     # postテンプレート作成
     def _init_post_tmp(self):
-        # ファイル名は日本語が未対応なため、16進数に置き換える
-        file_name = self._get_norm_str(self.title)
+        file_name = self._get_filename()
         date = datetime.date.today()
 
         return os.path.join(PJTPATH, "_posts", self.norm_path, f"{date}-{file_name}.md"), \
                self.tmp_str.format(self.title, self._get_date(), str(self.categories),
-                                   self._get_permalink(self.norm_path, f"{date:%Y/%m/%d}", file_name))
+                                   self._get_permalink(self.norm_path, f"{datetime.date.today():%Y/%m/%d}", file_name).strip('/'))
 
 
 if __name__ == '__main__':

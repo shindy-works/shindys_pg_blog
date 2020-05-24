@@ -5,13 +5,16 @@ layout : default
 <header class="page-header">
     <h1>{{page.title}}</h1>
     <dl class="dl-horizontal">
-        <dt>
-            Upload: <span class="post-meta">{{ page.upload_date | date: "%B %-d %Y" }}</span>
-        </dt>
+        {% assign today = page.date | date: "%B %-d %Y" %}
+        {% assign upload_date = page.upload_date | date: "%B %-d %Y" %}
 
-        {% if page.date != page.upload_date %}
         <dt>
-            Update: <span class="post-meta">{{ page.date | date: "%B %-d %Y" }}</span>
+            Upload: <span class="post-meta">{{ upload_date | date: "%B %-d %Y" }}</span>
+        </dt>
+        
+        {% if today != upload_date %}
+        <dt>
+            Update: <span class="post-meta">{{ today }}</span>
         </dt>
         {% endif %}
     </dl>
