@@ -5,7 +5,10 @@ require 'uri'
 module Jekyll
   module CapitalizeFirst
     def capitalize_first(words)
-      return words.split(' ').map(&:capitalize).join(' ')
+      if not words.nil? then
+        return words.split(' ').map(&:capitalize).join(' ')
+      end
+      return words
     end
   end
 end

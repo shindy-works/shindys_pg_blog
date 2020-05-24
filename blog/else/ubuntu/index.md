@@ -3,7 +3,7 @@ layout: page
 title: "ubuntu"
 date: 2020-05-23 12:54:38 +0900
 categories: ubuntu
-permalink: blog/else/ubuntu
+permalink: /blog/else/ubuntu/
 ---
 
 <ul class="post-list"> 

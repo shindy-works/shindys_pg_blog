@@ -5,15 +5,16 @@ permalink: /blog/
 ---
 
 <!-- 未完成ページURL -->
-{% assign not_yet = site.baseurl | append:"/not_yet/" %}
+{% assign not_yet = site.baseurl | append: '/not_yet/' %}
 
 
 <!-- カテゴリ取得（重複あり） -->
-{% assign categories = "" | split: "" %}
+{% assign categories = '' | split: '' %}
     {% for p in site.pages %}
-        {% if p.url contains "blog"  %}
-            {% assign category = p.url | split: "/" %}
-            {% if category[2] != nil and category[2] != "else" %}
+        {% assign sp_url = p.url | split: '/' %}
+        {% if sp_url contains 'blog'  %}
+            {% assign category = p.url | split: '/' %}
+            {% if category[2] != nil and category[2] != 'else' %}
                 {% assign categories = categories | push: category[2] %}
             {% endif %}
         {% endif %}
@@ -27,7 +28,8 @@ permalink: /blog/
 {% for category in categories %}
 ### {{ category | capitalize_first }}
     {% for p in rev_pages %}
-        {% if p.url contains category %}
+        {% assign sp_url = p.url | split: '/' %}
+        {% if sp_url contains category %}
 - [{{ p.title | capitalize_first }}]({{ site.baseurl }}{{ p.url }})
         {% endif %}
     {% endfor %}
@@ -35,7 +37,8 @@ permalink: /blog/
 
 ### Else
 {% for p in rev_pages %}
-    {% if p.url contains "else" %}
+    {% assign sp_url = p.url | split: '/' %}
+    {% if sp_url contains 'else' %}
 - [{{ p.title | capitalize_first }}]({{ site.baseurl }}{{ p.url }})
     {% endif %}
 {% endfor %}

@@ -1,9 +1,8 @@
 ---
 layout: page
-title: "Not Yet!"
-permalink: /not_yet/
+title: "Comming Soon"
+permalink: /comming_soon/
 ---
 
-# Comming Soon...
 ***
 [Blog]({{site.baseurl}}/blog/)へ戻る

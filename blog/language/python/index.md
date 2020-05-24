@@ -3,7 +3,7 @@ layout: page
 title: "Python"
 date: 2020-05-17 22:24:17 +0900
 categories: python
-permalink: blog/language/python
+permalink: /blog/language/python/
 ---
 
 <ul class="post-list"> 

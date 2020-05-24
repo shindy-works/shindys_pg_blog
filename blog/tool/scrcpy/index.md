@@ -3,7 +3,7 @@ layout: page
 title: "scrcpy"
 date: 2020-05-17 22:18:49 +0900
 categories: scrcpy
-permalink: blog/tool/scrcpy
+permalink: /blog/tool/scrcpy/
 ---
 
 <ul class="post-list"> 

@@ -3,7 +3,7 @@ layout: page
 title: "Jekyll"
 date: 2020-05-17 22:18:49 +0900
 categories: jekyll
-permalink: blog/tool/jekyll
+permalink: /blog/tool/jekyll/
 ---
 
 <ul class="post-list"> 
