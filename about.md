@@ -17,4 +17,4 @@ permalink: /about/
 ***
 GitHub:  [{{site.github_username}}](https://github.com/{{site.github_username}}/){: target="_blank"}  
 YouTube:  [shindy dev](https://youtube.com/channel/UC6GDtQ7oLtTTUEHhSGv7yVw){: target="_blank"}  
-Twitter:  [shindy-works](https://twitter.com/ShindyWorks)  
+Twitter:  [{{site.twitter_username}}](https://twitter.com/{{site.twitter_username}}){: target="_blank"}  
