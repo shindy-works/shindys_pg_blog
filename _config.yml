@@ -26,7 +26,7 @@ email: shindy.developer@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
     情報系大卒。プログラミングについて学んだことから便利ツールの紹介まで自由に投稿していきます。
 baseurl: "/shindys_pg_blog" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://shindy-dev.github.io/shindys_pg_blog/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: shindy-dev
 
 youtube: shindy dev
