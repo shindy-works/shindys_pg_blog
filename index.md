@@ -69,6 +69,12 @@ layout: page #home
     - **C#**  
         Unity使ったことないのに質問されたから勉強してみた。VB.Netとほとんど変わらない。  
         Unityに関してはモデル作るのが面倒で2Dしか触れてない。
+    
+    - **JavaScript**  
+        ElectronでGUI作ったときにさらっと勉強
+
+    - **Swift**  
+        さらっと基本文法を勉強
 
 - **Markup**
     - **HTML**, **CSS**  
