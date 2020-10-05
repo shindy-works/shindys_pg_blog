@@ -74,3 +74,4 @@ exclude:
   - README.md
   - create.py
   - utils.py
+  - templatecreator.py
