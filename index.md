@@ -16,7 +16,6 @@ layout: page #home
 
 
 # はじめに
-***
 
 {% highlight cmd %}
 > Hello World!
@@ -26,7 +25,6 @@ layout: page #home
 [ブログ]({{site.baseurl}}/blog/)へ
 
 # 更新履歴
-***
 <div class="kousin">
     {% for post in site.posts limit:10 %}
         {% assign today = post.date | date: "%B %-d %Y" %}
@@ -44,7 +42,6 @@ layout: page #home
 </div>
 
 # 今まで勉強してきた言語
-***
 - **Programing**
     - **C言語**  
         最初に勉強した言語。正直もう覚えてない。

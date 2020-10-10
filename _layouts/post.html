@@ -7,15 +7,9 @@ layout : default
     <dl class="dl-horizontal">
         {% assign today = page.date | date: "%B %-d %Y" %}
         {% assign upload_date = page.upload_date | date: "%B %-d %Y" %}
-
-        <dt>
-            Upload: <span class="post-meta">{{ upload_date | date: "%B %-d %Y" }}</span>
-        </dt>
-
+        <dt>Upload: <span class="post-meta">{{ upload_date | date: "%B %-d %Y" }}</span></dt>
         {% if today != upload_date %}
-        <dt>
-            Update: <span class="post-meta">{{ today date: "%B %-d %Y"  }}</span>
-        </dt>
+        <dt>Update: <span class="post-meta">{{ today | date: "%B %-d %Y"  }}</span></dt>
         {% endif %}
     </dl>
 </header>

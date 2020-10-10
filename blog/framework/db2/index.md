@@ -2,7 +2,7 @@
 layout: page
 title: "DB2"
 date: 2020-10-06 00:21:10 +0900
-categories: DB2
+categories: db2
 permalink: /blog/framework/db2/
 ---
 
