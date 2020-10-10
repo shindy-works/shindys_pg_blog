@@ -27,14 +27,14 @@ layout: page #home
 # 更新履歴
 <div class="kousin">
     {% for post in site.posts limit:10 %}
-        {% assign today = post.date | date: "%B %-d %Y" %}
+        {% assign update_date = post.date | date: "%B %-d %Y" %}
         {% assign upload_date = post.upload_date | date: "%B %-d %Y" %}
-        {% if today != upload_date %}
+        {% if update_date != upload_date %}
     <font color="#00C000">[UPDATE]</font>
         {% else %}
     <font color="#ff4500">[UPLOAD]</font>
         {% endif %}
-    {{ today }} :   
+    {{ update_date }} :   
     <a href="{{site.baseurl}}{{ post.url }}">
       {{ post.title }}
     </a> <br>
