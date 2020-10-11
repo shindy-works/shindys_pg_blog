@@ -110,7 +110,8 @@ class TemplateCreator:
         now_date = datetime.datetime(*datetime.datetime.today().timetuple()[:6])
         utc_date = datetime.datetime(*now_date.utcnow().timetuple()[:6])
         tz = datetime.timezone(now_date - utc_date)
-        return f"{now_date.astimezone(tz):%Y-%m-%d %H:%M:%S %z}"
+        #return f"{now_date.astimezone(tz):%Y-%m-%d %H:%M:%S %z}"
+        return f"{now_date.astimezone(tz):%Y-%m-%d}"
 
     def _get_filename(self):
         fn = self.norm_path.split("/")[-1]
