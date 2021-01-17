@@ -13,7 +13,9 @@ layout: page #home
     }
 </style>
 
-
+# リンクが変わりました。  
+[https://shindy-dev.github.io/shindys_note/](https://shindy-dev.github.io/shindys_note/)  
+(テーマを変更したので見栄えが良くなってます...!)
 
 # はじめに
 
